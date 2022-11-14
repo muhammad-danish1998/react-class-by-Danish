@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import counterContext from "./CounterContext";
+import Parent from "./Parent";
+const App = () => {
+  const num = useState(0); // curr , fun
+  console.log("num===>", num);
 
-function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <counterContext.Provider value={num[0]}>
+      <div style={{ textAlign: "center" }}>
+        <Parent num={num} />
+      </div>
+    </counterContext.Provider>
   );
-}
+};
 
 export default App;
