@@ -1,17 +1,11 @@
-import React, { useState } from "react";
-import counterContext from "./CounterContext";
-import Parent from "./Parent";
+import React from 'react'
+import Todo from './component/Todo'
 const App = () => {
-  const num = useState(0); // curr , fun
-  console.log("num===>", num);
-
   return (
-    <counterContext.Provider value={num[0]}>
-      <div style={{ textAlign: "center" }}>
-        <Parent num={num} />
-      </div>
-    </counterContext.Provider>
-  );
-};
+    <div style={{textAlign:"center"}}>
+      <Todo />
+    </div>
+  )
+}
 
-export default App;
+export default App
